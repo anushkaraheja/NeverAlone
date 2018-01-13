@@ -6,7 +6,8 @@
         <script src="options.js"></script>
     </head>
     <body>
-        <div class="container">
+    	<div class="options">
+    		       <div class="container">
         	<p id = "preferences"> Tell us your preferences!</p>
         </div>
         <div class="container">    
@@ -15,7 +16,6 @@
             	<div class="distance opt">
 				    <label for="selectDistance"> Distance: </label>
 				    <select class="distance" id="selectDistance">
-				      <option></option>
 				      <option>Less than a mile </option>
 				      <option>2-5 miles</option>
 				      <option>More than 5 miles</option>
@@ -25,7 +25,6 @@
 				<div class="time opt">
 				    <label for="selectTime"> Time: </label>
 				    <select class="time" id="selectTime">
-				      <option></option>
 				      <option>Within 30 minutes </option>
 				      <option>Next 5 hours</option>
 				      <option>Later Today</option>
@@ -36,7 +35,6 @@
 				<div class="cuisine opt">
 				    <label for="selectCuisine"> Cuisine: </label>
 				    <select class="cuisine" id="selectCuisine">
-				      <option></option>
 				      <option>Italian </option>
 				      <option>Indian</option>
 				      <option>Thai</option>
@@ -48,14 +46,17 @@
 				<div class="people opt">
 				    <label for="selectPeople"> Number of People: </label>
 				    <select class="people" id="selectPeople">
-				      <option></option>
 				      <option>1 person </option>
 				      <option>2-5 people </option>
 				      <option>More than 5 people</option>
 				    </select>
 				</div>
-
+				<div>
+					<button class="btn btn-lg btn-danger">Next</button>
+				</div>
             </div>
         </div>
+    	</div>
+ 
     </body>
 </html>
