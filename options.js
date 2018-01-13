@@ -76,8 +76,35 @@ var myProfile = {
 	 */
 	function buildCards() {
 		getLogistics();
+		// hide options view
+		document.getElementById("options").style.display = "none";
+		// display card view
+		var cardView = document.getElementById("cards");
+		cardView.style.display = "block";
+		// create/populate cards
 		var matches = match();
-		//TODO: 
+		for (var i = 0; i < matches.length; i++) {
+			var attr = matches[i].attr;
+			var card = document.createElement("div");
+			card.classList.add("card");
+			// add image
+			var img = document.createElement("img");
+			img.src = attr.img;
+			img.classList.add("profile-pic");
+			card.appendChild(img);
+			// add firstName
+			var name = document.createElement("h2");
+			name.innerText = attr.firstName;
+			name.classList.add("name");
+			card.appendChild(name);
+			// add interests
+			var interests = document.createElement("p");
+			interests.innerText = attr.interests;
+			interests.classList.add("interests");
+			card.appendChild(interests);
+
+			cardView.appendChild(card);
+		}
 	}
 	
 	/**
