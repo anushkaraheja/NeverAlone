@@ -1,1 +1,38 @@
-index.css
+#brandName {
+    font-size: 70px;
+    font-weight: 100;
+    color: hsl(0, 84%, 53%)
+}
+
+.header {
+    margin-top:30vh;
+}
+
+.text {
+    width:60vw;
+}
+
+
+
+.container {
+    display: flex;
+    justify-content: center;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+}
+
+
+@media (min-width:720px){
+
+    #brandName {
+        font-size:100px;
+    }
+    body{
+        background-image: url('img/1.jpeg');
+        background-size:cover; 
+        justify-content: flex-end;
+    }
+}
