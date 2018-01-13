@@ -1,11 +1,60 @@
 <html>
     <head>  
-
+    	<link rel="stylesheet" href="db.css">
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <script src="cards.js"></script>
+        <script src="options.js"></script>
     </head>
     <body>
         <div class="container">
-            <div class="card">
-                <p>hiii</p>
+        	<p id = "preferences"> Tell us your preferences!</p>
+        </div>
+        <div class="container">    
+            <div class="myCard">
+            	
+            	<div class="distance opt">
+				    <label for="selectDistance"> Distance: </label>
+				    <select class="distance" id="selectDistance">
+				      <option></option>
+				      <option>Less than a mile </option>
+				      <option>2-5 miles</option>
+				      <option>More than 5 miles</option>
+				    </select>
+				</div>
+
+				<div class="time opt">
+				    <label for="selectTime"> Time: </label>
+				    <select class="time" id="selectTime">
+				      <option></option>
+				      <option>Within 30 minutes </option>
+				      <option>Next 5 hours</option>
+				      <option>Later Today</option>
+				      <option>Tomorrow</option>
+				    </select>
+				</div>
+
+				<div class="cuisine opt">
+				    <label for="selectCuisine"> Cuisine: </label>
+				    <select class="cuisine" id="selectCuisine">
+				      <option></option>
+				      <option>Italian </option>
+				      <option>Indian</option>
+				      <option>Thai</option>
+				      <option>Chinese</option>
+				      <option>Korean</option>
+				    </select>
+				</div>
+
+				<div class="people opt">
+				    <label for="selectPeople"> Number of People: </label>
+				    <select class="people" id="selectPeople">
+				      <option></option>
+				      <option>1 person </option>
+				      <option>2-5 people </option>
+				      <option>More than 5 people</option>
+				    </select>
+				</div>
+
             </div>
         </div>
     </body>
