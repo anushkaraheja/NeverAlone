@@ -94,9 +94,10 @@
 		getLogistics();
 		// hide options view
 		document.querySelector(".options").style.display = "none";
+		document.querySelector("#congrats").style.display = "block"
 		// display card view
 		var cardView = document.querySelector(".cards");
-		cardView.style.display = "block";
+		cardView.style.display = "block"; 
 		// create/populate cards
 		var matches = match();
 		console.log("below are matches")
@@ -112,7 +113,7 @@
 			var img = document.createElement("img");
 			console.log(attr)
 			img.src = attr.img;
-			img.classList.add("profile-pic");
+			img.classList.add("card-img-bottom");
 			card.appendChild(img);
 			// add firstName
 			var name = document.createElement("h2");

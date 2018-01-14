@@ -11,6 +11,10 @@
 
  }
 
+#loader {
+	display: none;
+}
+
 .opt {
 	font-size: 17px;
 	color: rgb(235,235,235);
@@ -28,3 +32,33 @@ body {
 	background-size: cover; 
     justify-content: flex-end;
 }
+
+.card{
+	width: 20vw;
+	border: 2px solid black;
+	float:left;
+
+}
+
+img{
+	border: 2px solid black;
+}
+
+#congrats {
+		display: none;
+	color: white;
+	margin-left: 50px;
+	margin-top: 50px;
+}
+
+h2, p {
+	padding: 10px 10px 2px 10px ;
+}
+
+.cards {
+	padding-top: 10vh;
+}
+.card-img-bottom {
+	height: 200px;
+}
+
