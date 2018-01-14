@@ -1,26 +1,25 @@
-/**
- * Represents the user profile
- */
-var myProfile = {
-	attr:{
+
+
+(function() {
+	/**
+	 * Represents the user profile
+	 */
+	var attr = {
 		img:"image.jpg",
 		firstName:"Matthew",
 		lastName:"Karami",
-		age:	20,
+		age:20,
 		interests:"interests"
-	},
-	logistics:{
+	};
+	var logistics = {
 			maxDistance:5,
 			distance:0,
-			numPeople:3,
+			numP:2,
 			time:30,
-			cusine:"italian"
-	}
-}
-
-(function() {
+			cuisine:"italian"
+	};
 	window.onload = function() {
-		document.getElementByID("submit").onclick = buildCards;
+		document.querySelector("#submit").onclick = buildCards;
 	};
 
 	/**
@@ -29,31 +28,45 @@ var myProfile = {
 	function match() {
 		var otherUsers = genUsers();
 		// match
-		var myProfile = myProfile.logistics;
+		//console.log(otherUsers);
 		var matches = [];
 		for (var i = 0; i < otherUsers.length; i++) {
-			var curr = otherUsers[i];
+			var curr = otherUsers[i].logistics;
+			//onsole.log("cc")
 			// check distance matches
-			if (curr.distance < myProfile.maxDistance) {
+			if (curr.distance <= logistics.maxDistance) {
 				// check time matches
-				if (curr.time >= (myProfile.time + 10) || curr.time <= (myProfile.time - 10)) {
+				//console.log("distance matched")
+				if (curr.time <= (logistics.time + 10) && curr.time >= (logistics.time - 10)) {
+					//console.log("time matched")
 					// check cusine matches
-					if (curr.cuisine.equals(myProfile.cuisine) || myProfile.cuisine.equals("dont care")) {
+					if (curr.cuisine === logistics.cuisine || logistics.cuisine === "dont care") {
+						//console.log("cuisine matched")
+
 						// check number of people matches
-						if (curr.numP == myProfile.numP) {
+						if (curr.numP == logistics.numP) {
 							// we have passed all checks - we have a match
-							matches.put(otherUsers[i]);
+							matches.push(otherUsers[i]);
+							//console.log(matches)
 						}
 					}
 				}
 			}
 		}
+		console.log(matches.length)
 		if (matches.length == 0) {
 			alert("No matches found, try different parameters");
+			document.querySelector(".options").style.display = "block";
 		} else {
-			if (myProfile.numP == 1) {
+			//console.log("check")
+
+			if (logistics.numP == 1) {
+				console.log("check")
+
 				return [getRandMatch(matches)];
-			} else if (myProfile.numP == 2) {
+			} else if (logistics.numP == 2) {
+				//console.log("check")
+
 				if (matches.length > 5) {
 					// choose five random matches
 					var result = new Set();
@@ -63,32 +76,41 @@ var myProfile = {
 					return result;
 				} else {
 					// we already have 2-5 matches made
+					console.log("check")
 					return matches;
 				}
-			} else if (muProfile.numP == 3){
+			} else if (logistics.numP == 3){
 				return matches;
 			}
 		}
+		return matches;
 	}
 	
 	/**
 	 * First gets logistics, then hides options view, displays card view
 	 */
 	function buildCards() {
+		console.log("getting in buildcards");
 		getLogistics();
 		// hide options view
-		document.getElementById("options").style.display = "none";
+		document.querySelector(".options").style.display = "none";
 		// display card view
-		var cardView = document.getElementById("cards");
+		var cardView = document.querySelector(".cards");
 		cardView.style.display = "block";
 		// create/populate cards
 		var matches = match();
+		console.log("below are matches")
+		console.log(matches)
+
 		for (var i = 0; i < matches.length; i++) {
 			var attr = matches[i].attr;
+			console.log("-----below")
+			console.log(matches[i])
 			var card = document.createElement("div");
 			card.classList.add("card");
 			// add image
 			var img = document.createElement("img");
+			console.log(attr)
 			img.src = attr.img;
 			img.classList.add("profile-pic");
 			card.appendChild(img);
@@ -121,11 +143,10 @@ var myProfile = {
 	 */
 	function getLogistics() {
 		// TODO: actuallly retrieve value correctly
-		var logistics = myProfile.logistics;
-		logistics.dist = document.getElementByID("distance").value;
-		logistics.numP = document.getElementByID("num-people").value;
-		logistics.time = document.getElementByID("time").value;
-		logistics.cusine = document.getElementByID("cusine").value;
+		logistics.dist = document.querySelector("#selectDistance").value;
+		logistics.numP = document.querySelector("#selectPeople").value;
+		logistics.time = document.querySelector("#selectTime").value;
+		logistics.cusine = document.querySelector("#selectCuisine").value;
 	}
 	
 	/**
@@ -133,8 +154,13 @@ var myProfile = {
 	 */
 	function genUsers() {
 		var user1 = {
-			attr: {age: 35, interests:"Mtn", firstName:"John", lastName:"Hancock", img:"image.jpg"}, 
-			logistics: {time: 30, location:0, distance:1, cuisine: "", numP:1}
+			attr: {age: 35, interests:"Mtn", firstName:"Fox", lastName:"Hancock", img:"img/fox.jpg"}, 
+			logistics: {time: 30, location:0, distance:1, cuisine: "italian", numP:2}
+		};
+
+		var userx = {
+			attr: {age: 35, interests:"Mtn", firstName:"IceClimbers", lastName:"Hancock", img:"img/iceclimbers.jpg"}, 
+			logistics: {time: 30, location:0, distance:1, cuisine: "italian", numP:2}
 		};
 
 		var user2 = {
@@ -157,7 +183,10 @@ var myProfile = {
 			logistics: {time:120, location:0, distance:1, cuisine: "", numP:1}
 		};			
 
-		return [user1, user2, user3, user4, user5];
+		return [user1, userx, user2, user3, user4, user5];
 	};
 
 })();
+
+
+

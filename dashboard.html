@@ -2,6 +2,7 @@
     <head>  
     	<link rel="stylesheet" href="db.css">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
         <script src="cards.js"></script>
         <script src="options.js"></script>
     </head>
@@ -16,49 +17,48 @@
             	<div class="distance opt">
 				    <label for="selectDistance"> Distance: </label>
 				    <select class="distance" id="selectDistance">
-				      <option>Less than a mile </option>
-				      <option>2-5 miles</option>
-				      <option>More than 5 miles</option>
+				      <option value="1">Less than a mile </option>
+				      <option value="5">5 miles</option>
+				      <option value="10">10 miles</option>
 				    </select>
 				</div>
 
 				<div class="time opt">
 				    <label for="selectTime"> Time: </label>
 				    <select class="time" id="selectTime">
-				      <option>Within 30 minutes </option>
-				      <option>Next 5 hours</option>
-				      <option>Later Today</option>
-				      <option>Tomorrow</option>
+				      <option value="30">Within 30 minutes </option>
+				      <option value="60">Next 5 hours</option>
+				      <option value="120">Later Today</option>
 				    </select>
 				</div>
 
 				<div class="cuisine opt">
 				    <label for="selectCuisine"> Cuisine: </label>
 				    <select class="cuisine" id="selectCuisine">
-				      <option>Italian </option>
-				      <option>Indian</option>
-				      <option>Thai</option>
-				      <option>Chinese</option>
-				      <option>Korean</option>
+				      <option value="italian" >Italian </option>
+				      <option value="indian">Indian</option>
+				      <option value="thai">Thai</option>
+				      <option value="chinese">Chinese</option>
+				      <option value="korean">Korean</option>
 				    </select>
 				</div>
 
 				<div class="people opt">
 				    <label for="selectPeople"> Number of People: </label>
 				    <select class="people" id="selectPeople">
-				      <option>1 person </option>
-				      <option>2-5 people </option>
-				      <option>More than 5 people</option>
+				      <option value="1">1 person </option>
+				      <option value="2">2-5 people </option>
+				      <option value="3">More than 5 people</option>
 				    </select>
 				</div>
 				<div>
-					<button class="btn btn-lg btn-danger">Next</button>
+					<button class="btn btn-lg btn-danger" id="submit">Next</button>
 				</div>
             </div>
         </div>
     	</div>
     	
-    	<div class="cards"></div>
+        <div class="cards"></div>
  
     </body>
 </html>
